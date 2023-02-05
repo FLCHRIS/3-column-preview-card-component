@@ -1,0 +1,143 @@
+@import '_variables';
+
+main {
+    background-color: $VeryLightGray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    position: relative;
+    .main__cards {
+        width: 90%;
+        margin: 5em auto;
+        overflow: hidden;
+        border-radius: .5em;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        .card {
+            padding: 3em;
+            img {
+                width: 4.5em;
+                margin-bottom: 1.5em;
+            }
+            h1 {
+                font-family: $BigShouldersDisplay;
+                font-size: 3.5rem;
+                color: $VeryLightGray;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            p {
+                max-width: 375px;
+                margin: 2em 0 3.5em;
+                font-family: $LexendDeca;
+                color: $TransparentWhite;
+                font-size: 1.5rem;
+                line-height: 1.7;
+            }
+            a {
+                border-radius: 2em;
+                display: inline-block;
+                padding: .7em 2em;
+                background-color: $VeryLightGray;
+                text-decoration: none;
+                font-family: $LexendDeca;
+                font-size: 1.5rem;
+                transition: background-color .3s, color .3s;
+                border: 2px dotted $VeryLightGray;
+                &:hover {
+                    background-color: transparent;
+                    color: $VeryLightGray;
+                }
+            }
+        }
+        .card-sedans {
+            background-color: $BrightOrange;
+            a {
+                color: $BrightOrange;
+            }
+        }
+        .card-suvs {
+            background-color: $DarkCyan;
+            a {
+                color: $DarkCyan;
+            }
+        }
+        .card-luxury {
+            background-color: $VeryDarkCyan;
+            a {
+                color: $VeryDarkCyan;
+            }
+        }
+    }
+    .attribution {
+        position: absolute;
+        bottom: .5em;
+        right: .5em;
+        text-align: end;
+        font-family: $LexendDeca;
+        font-size: 1.3rem;
+        color: $VeryDarkCyan;
+        a {
+            text-decoration: none;
+            color: $BrightOrange;
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+    main {
+        .main__cards {
+            width: 90%;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            .card {
+                padding: 3em;
+                img {
+                    margin-bottom: 2em;
+                }
+                p {
+                    margin: 2em 0 7em;
+                }
+            }
+            .card-suvs {
+                border-radius: 0 0 .5em 0;
+            }
+            .card-luxury {
+                border-radius: 0 0 .5em 0;
+            }
+        }
+    }
+}
+@media screen and (min-width: 850px){
+    main {
+        .main__cards {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 67em;
+            grid-template-rows: none;
+            grid-template-columns: 1fr 1fr 1fr;
+            .card {
+                padding: 3.5em;
+                img {
+                    margin-bottom: 2em;
+                }
+                p {
+                    margin: 2em 0 7em;
+                }
+            }
+            .card-suvs {
+                border-radius: 0;
+            }
+            .card-luxury {
+                border-radius: 0;
+            }
+        }
+        .attribution {
+            bottom: 1em;
+            right: 1em;
+        }
+    }
+}
